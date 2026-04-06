@@ -6,7 +6,7 @@ def create_app() -> Flask:
     app = Flask(__name__)
 
     app.config["SQLALCHEMY_DATABASE_URI"] = (
-        "mysql+pymysql://root:daniel20082006@localhost/sigac"
+        "mysql+pymysql://<YOUR USERNAME>:<YOUR_PASSWORD>@localhost/sigac"
     )
 
     db.init_app(app)
