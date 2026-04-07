@@ -15,4 +15,4 @@ class Usuario(Base):
     tipo: Mapped[str] = mapped_column(String(100), nullable=False)
     matricula: Mapped[Optional[str]] = mapped_column(String(100), unique=True)
     cursos: Mapped[list["AlunoCurso"]] = relationship(back_populates="usuario")
-    submissoes: Mapped[Optional[list["Submissao"]]] = relationship(back_populates="usuario")
+    submissoes: Mapped[list["Submissao"]] = relationship(back_populates="usuario")
