@@ -59,7 +59,7 @@ pip install -r requirements.txt
 No arquivo `app/__init__.py`, a aplicação usa a seguinte URI de conexão:
 
 ```python
-mysql+pymysql://<YOUR USERNAME>:<YOUR_PASSWORD>@localhost/sigac
+mysql+pymysql://<YOUR_USERNAME>:<YOUR_PASSWORD>@localhost/sigac
 ```
 
 Substitua os valores pelas credenciais do seu ambiente local. Se preferir, essa configuração pode ser movida para variáveis de ambiente depois.
