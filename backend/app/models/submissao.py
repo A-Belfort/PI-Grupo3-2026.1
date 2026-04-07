@@ -12,8 +12,8 @@ class Submissao(Base):
     data_envio: Mapped[datetime] = mapped_column(DateTime(),
                                                  server_default=func.now(),
                                                  nullable=False)
-    id_aluno: Mapped[int] = mapped_column(ForeignKey("usuario.id"))
-    id_coordenador: Mapped[Optional[int]] = mapped_column(ForeignKey("usuario.id"))
-    aluno: Mapped["Aluno"] = relationship(back_populates="submissao")
-    coordenador: Mapped[Optional["Coordenador"]] = relationship(back_populates="submissao")
+    id_aluno: Mapped[int] = mapped_column(ForeignKey("aluno.id"))
+    id_coordenador: Mapped[Optional[int]] = mapped_column(ForeignKey("coordenador.id"))
+    aluno: Mapped["Aluno"] = relationship(back_populates="submissoes")
+    coordenador: Mapped[Optional["Coordenador"]] = relationship(back_populates="submissoes")
     motivo_rejeicao: Mapped[Optional[str]] = mapped_column(String(300))

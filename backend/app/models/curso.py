@@ -10,3 +10,4 @@ class Curso(Base):
     nome: Mapped[str] = mapped_column(String(100), nullable=False)
     carga_horaria_minima: Mapped[int] = mapped_column(nullable=False)
     alunos: Mapped[list["AlunoCurso"]] = relationship(back_populates="curso")
+    coordenadores: Mapped[list["CoordenadorCurso"]] = relationship(back_populates="curso")

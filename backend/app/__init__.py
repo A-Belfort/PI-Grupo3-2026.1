@@ -1,5 +1,6 @@
 from flask import Flask
 from .extensions import db, migrate, jwt
+from app.models.aluno import Aluno
 
 
 def create_app() -> Flask:
