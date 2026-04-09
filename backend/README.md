@@ -24,7 +24,6 @@ backend/
 │   └── routes/         # Rotas da API
 ├── migrations/         # Arquivos de migrations do Alembic
 ├── main.py             # Ponto de entrada da aplicação
-├── .env                # variáveis de ambiente local
 ├── requirements.txt    # Dependências do projeto
 └── .gitignore
 ```
@@ -61,15 +60,15 @@ pip install -r requirements.txt
 
 No arquivo `app/__init__.py`, a aplicação usa a seguinte URI de conexão:
 ```python
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("MYSQL_URI")
 ```
 
 Crie um arquivo .env na raiz da pasta backend e coloque a URL do banco de dados dentro dela
 ```.env
-DATABASE_URL=mysql+pymysql://<YOUR_USERNAME>:<YOUR_PASSWORD>@localhost/sigac
+MYSQL_URI=mysql+pymysql://<YOUR_USERNAME>:<YOUR_PASSWORD>@localhost/sigac
 ```
 
-Coloque as credênciais do seu banco na .env criada no seu ambiente
+Coloque as credênciais do seu banco na `.env` criada no seu ambiente
 
 ### 5. Rodar a aplicação
 
