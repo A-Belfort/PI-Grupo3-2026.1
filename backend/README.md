@@ -58,12 +58,16 @@ pip install -r requirements.txt
 ### 4. Configurar o banco de dados
 
 No arquivo `app/__init__.py`, a aplicação usa a seguinte URI de conexão:
-
 ```python
-mysql+pymysql://<YOUR_USERNAME>:<YOUR_PASSWORD>@localhost/sigac
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 ```
 
-Substitua os valores pelas credenciais do seu ambiente local. Se preferir, essa configuração pode ser movida para variáveis de ambiente depois.
+Crie um arquivo .env na raiz da pasta backend e coloque a URL do banco de dados dentro dela
+```.env
+DATABASE_URL=mysql+pymysql://<YOUR_USERNAME>:<YOUR_PASSWORD>@localhost/sigac
+```
+
+Coloque as credênciais do seu banco na .env criada no seu ambiente
 
 ### 5. Rodar a aplicação
 
