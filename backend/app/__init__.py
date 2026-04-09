@@ -8,7 +8,7 @@ def create_app() -> Flask:
     app = Flask(__name__)
 
     load_dotenv()
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("MYSQL_URI")
 
     db.init_app(app)
     migrate.init_app(app, db)
