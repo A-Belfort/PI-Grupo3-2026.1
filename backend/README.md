@@ -20,6 +20,7 @@ backend/
 ├── app/
 │   ├── extensions/     # Configuração de banco, JWT e migrations
 │   ├── models/         # Modelos ORM
+    ├── controllers/    # Controladores
 │   └── routes/         # Rotas da API
 ├── migrations/         # Arquivos de migrations do Alembic
 ├── main.py             # Ponto de entrada da aplicação
