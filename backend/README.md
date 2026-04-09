@@ -11,6 +11,7 @@ Backend da aplicação desenvolvido em **Flask**, com **SQLAlchemy**, **Flask-Mi
 * Flask-Migrate
 * PyMySQL
 * Alembic
+* Python-dotenv
 
 ## Estrutura
 
