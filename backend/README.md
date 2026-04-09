@@ -99,5 +99,6 @@ flask db upgrade
 O projeto já ignora:
 
 * `venv/`
+* `.env`
 * `__pycache__/`
 * `*.pyc`
