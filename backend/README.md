@@ -23,6 +23,7 @@ backend/
 │   └── routes/         # Rotas da API
 ├── migrations/         # Arquivos de migrations do Alembic
 ├── main.py             # Ponto de entrada da aplicação
+├── .env                # variáveis de ambiente local
 ├── requirements.txt    # Dependências do projeto
 └── .gitignore
 ```
