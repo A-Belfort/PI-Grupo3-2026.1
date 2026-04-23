@@ -1,4 +1,4 @@
-from .super_admin import SuperAdmin
+from .usuario import Usuario
 from .coordenador import Coordenador
 from .aluno import Aluno
 from .curso import Curso

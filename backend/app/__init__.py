@@ -2,7 +2,7 @@ from flask import Flask
 from .extensions import db, migrate, jwt
 from app.models.aluno import Aluno
 from dotenv import load_dotenv
-import os 
+import os
 
 def create_app() -> Flask:
     app = Flask(__name__)
@@ -14,6 +14,7 @@ def create_app() -> Flask:
     migrate.init_app(app, db)
     jwt.init_app(app)
 
-    from app import models
+    from app import routes
+    app.register_blueprint(routes.auth_bp, url_prefix='/api/usuario')
 
     return app
