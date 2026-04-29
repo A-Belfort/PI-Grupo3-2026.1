@@ -14,7 +14,11 @@ def create_app() -> Flask:
     db.init_app(app)
     migrate.init_app(app, db)
     jwt.init_app(app)
-
+    
+    app.route("/")
+    def home():
+        return "API está funcionando"
+    
     from app.routes import bp_usuario, bp_submissao
     app.register_blueprint(bp_usuario)
     app.register_blueprint(bp_submissao)
