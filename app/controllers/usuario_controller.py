@@ -13,7 +13,10 @@ def decrypto_senha(email_usuario, senha):
     senha_hash = db.session.execute(
         select(Usuario.senhaHash).filter_by(email=email_usuario)
     ).scalar_one_or_none()
-
+    
+    if senha_hash is None:
+        return False
+    
     result = check_password_hash(senha_hash, senha)
     return result
 
