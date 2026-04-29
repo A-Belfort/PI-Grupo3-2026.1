@@ -1,7 +1,8 @@
 from flask import Blueprint, request, jsonify
 from app.controllers import criar_submissao_controller
 
-bp = Blueprint('alunos', __name__, url_prefix='/api/submissoes')
+
+bp = Blueprint('submissao', __name__, url_prefix='/api/submissoes')
 
 
 @bp.route('/nova_submissao', methods=['POST'])

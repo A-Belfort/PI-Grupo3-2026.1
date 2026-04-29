@@ -1,1 +1,2 @@
-from .usuario_routes import bp as auth_bp
+from .usuario_routes import bp as bp_usuario
+from .submissao_routes import bp as bp_submissao

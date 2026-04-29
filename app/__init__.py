@@ -1,11 +1,12 @@
 from flask import Flask
 from .extensions import db, migrate, jwt
-from app.models.aluno import Aluno
 from dotenv import load_dotenv
 import os
+from flask_cors import CORS
 
 def create_app() -> Flask:
     app = Flask(__name__)
+    CORS(app)
 
     load_dotenv()
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("MYSQL_URI")
@@ -14,7 +15,8 @@ def create_app() -> Flask:
     migrate.init_app(app, db)
     jwt.init_app(app)
 
-    from app import routes
-    app.register_blueprint(routes.auth_bp, url_prefix='/api/usuario')
+    from app.routes import bp_usuario, bp_submissao
+    app.register_blueprint(bp_usuario)
+    app.register_blueprint(bp_submissao)
 
     return app
