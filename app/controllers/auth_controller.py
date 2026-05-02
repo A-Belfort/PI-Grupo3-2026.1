@@ -22,7 +22,7 @@ def login_controller(data):
         }, 401
 
     token = create_access_token(
-        identity=usuario.id,
+        identity=str(usuario.id),
         additional_claims={"role": usuario.tipo}
     )
         
