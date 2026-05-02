@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from app.controllers import cadastrar_usuario_controller
-from middlewares import verificar_role
+from app.middlewares import verificar_role
 
 
 bp = Blueprint("usuario", __name__, url_prefix="/api/usuarios")

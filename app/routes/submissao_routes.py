@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from app.controllers import criar_submissao_controller, validar_submissao_controller
-from middlewares import verificar_role
+from app.middlewares import verificar_role
 
 
 bp = Blueprint("submissao", __name__, url_prefix="/api/submissoes")
