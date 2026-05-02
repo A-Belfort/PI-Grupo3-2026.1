@@ -11,6 +11,7 @@ class Usuario(Base):
     nome: Mapped[str] = mapped_column(String(100), nullable=False)
     email: Mapped[str] = mapped_column(String(100), nullable=False,
                                        unique=True)
-    senhaHash: Mapped[str] = mapped_column(String(300), nullable=False)
+    senha: Mapped[str] = mapped_column(String(300), nullable=False)
     tipo: Mapped[str] = mapped_column(String(100), nullable=False)
     matricula: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
+    

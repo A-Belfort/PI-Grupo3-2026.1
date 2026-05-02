@@ -1,35 +1,23 @@
-from flask import Blueprint, request, jsonify
-from app.controllers import cadastrar_usuario_controller, login_controller
+from flask import Blueprint, request
+from app.controllers import cadastrar_usuario_controller
+from middlewares import verificar_role
 
 
-bp = Blueprint('usuario', __name__, url_prefix='/api/usuarios')
+bp = Blueprint("usuario", __name__, url_prefix="/api/usuarios")
 
 
-@bp.route('/cadastrar_usuario', methods=['POST'])
+@bp.route("/cadastrar", methods=["POST"])
+@verificar_role(["super_admin", "coordenador"])
 def cadastrar_usuario():
     try:
         data = request.get_json()
         response, status = cadastrar_usuario_controller(data)
-        return jsonify(response), status
+        return response, status
 
     except Exception as e:
         print(f"Erro ao efetuar cadastro: {e}")
-        return jsonify({
+        return {
             "success": False,
             "message": "Erro ao efetuar cadastro."
-        }), 500
+        }, 500
 
-
-@bp.route('/login', methods=['POST'])
-def login_admin():
-    try:
-        data = request.get_json()
-        response, status = login_controller(data)
-        return jsonify(response), status
-
-    except Exception as e:
-        print(f"Erro ao efetuar login: {e}")
-        return jsonify({ 
-            "success": False,
-            "message": "Erro ao efetuar login."
-        }), 500
