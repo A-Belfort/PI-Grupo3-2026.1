@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from middlewares import verificar_role
+from app.middlewares import verificar_role
 from app.controllers import cadastrar_curso_controller
 
 
