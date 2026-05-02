@@ -6,8 +6,7 @@ from flask_jwt_extended import create_access_token
 
 
 def login_controller(data):
-    query = select(Usuario).where(Usuario.email == data["email"], 
-                                  Usuario.senha == data["senha"])
+    query = select(Usuario).where(Usuario.email == data["email"])
     usuario = db.session.execute(query).scalar_one_or_none()
     
     if usuario is None:
