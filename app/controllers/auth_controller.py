@@ -1,5 +1,5 @@
-from extensions import db
-from models import Usuario
+from app.extensions import db
+from app.models import Usuario
 from sqlalchemy import select
 from werkzeug.security import check_password_hash
 from flask_jwt_extended import create_access_token

@@ -1,4 +1,4 @@
-from extensions import Base
+from app.extensions import Base
 from sqlalchemy import String, Integer, Boolean
 from sqlalchemy.orm import Mapped, mapped_column
 
