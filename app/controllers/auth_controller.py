@@ -21,7 +21,7 @@ def login_controller(data):
             "message": "Credenciais inválidas."
         }, 401
 
-    token = create_access_token(
+    access_token = create_access_token(
         identity=str(usuario.id),
         additional_claims={"role": usuario.tipo}
     )
@@ -29,5 +29,5 @@ def login_controller(data):
     return {
         "success": True,
         "message": "Login efetuado com sucesso.",
-        "token": token
+        "access_token": access_token
     }, 200

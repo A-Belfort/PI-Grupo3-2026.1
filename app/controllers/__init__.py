@@ -1,4 +1,4 @@
-from .submissao_controller import criar_submissao_controller, validar_submissao_controller
+from .submissao_controller import criar_submissao_controller, listar_submissoes_controller, validar_submissao_controller
 from .usuario_controller import cadastrar_usuario_controller
 from .auth_controller import login_controller
 from .curso_controller import cadastrar_curso_controller

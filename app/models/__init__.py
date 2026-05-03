@@ -2,3 +2,7 @@ from .usuario import Usuario
 from .submissao import Submissao
 from .curso import Curso
 from .regra_atividade import RegraAtividade
+from .certificado import Certificado
+from .coordenador_curso import CoordenadorCurso
+from .aluno_curso import AlunoCurso
+from .atividade_complementar import AtividadeComplementar
