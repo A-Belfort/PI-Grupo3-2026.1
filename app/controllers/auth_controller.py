@@ -18,7 +18,7 @@ def login_controller(data):
     elif not check_password_hash(usuario.senha, data["senha"]):
         return {
             "success": False,
-            "message": "Erro ao efetuar login."
+            "message": "Credenciais inválidas."
         }, 401
 
     token = create_access_token(
